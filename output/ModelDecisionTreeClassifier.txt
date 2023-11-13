@@ -1,0 +1,20 @@
+Model successfully saved to models/ModelDecisionTreeClassifier.pkl.
+Decision Tree Classifier Analysis:
+Accuracy: 0.8439024390243902
+ROC-AUC: 0.9088616028935848
+Brier Score: 0.11745017408678242
+Confusion Matrix:
+[[75 27]
+ [ 5 98]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.74      0.82       102
+           1       0.78      0.95      0.86       103
+
+    accuracy                           0.84       205
+   macro avg       0.86      0.84      0.84       205
+weighted avg       0.86      0.84      0.84       205
+
+Best parameter combination: {'criterion': 'gini', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 2}
+Best accuracy score: 0.8975740399098063

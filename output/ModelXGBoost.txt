@@ -1,0 +1,19 @@
+Model successfully saved to models/ModelXGBoost.pkl.
+Accuracy: 0.9853658536585366
+ROC-AUC: 0.9860079954311821
+Brier Score: 0.020258061250383534
+Confusion Matrix:
+[[102   0]
+ [  3 100]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.99       102
+           1       1.00      0.97      0.99       103
+
+    accuracy                           0.99       205
+   macro avg       0.99      0.99      0.99       205
+weighted avg       0.99      0.99      0.99       205
+
+Best parameter combination: {'colsample_bytree': 1.0, 'learning_rate': 0.09, 'max_depth': 5, 'n_estimators': 95, 'subsample': 1.0}
+Best accuracy score: 0.9792608040783223
