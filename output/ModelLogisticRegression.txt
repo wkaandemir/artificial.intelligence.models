@@ -1,0 +1,19 @@
+Model successfully saved to models/ModelLogisticRegression.pkl.
+Accuracy: 0.7902439024390244
+ROC-AUC: 0.8665524462212069
+Brier Score: 0.14938499301255737
+Confusion Matrix:
+[[70 32]
+ [11 92]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.86      0.69      0.77       102
+           1       0.74      0.89      0.81       103
+
+    accuracy                           0.79       205
+   macro avg       0.80      0.79      0.79       205
+weighted avg       0.80      0.79      0.79       205
+
+Best Parameter Combination: {'C': 0.071}
+Best Accuracy Score: 0.8475753767724571

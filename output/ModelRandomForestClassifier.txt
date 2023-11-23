@@ -1,0 +1,19 @@
+Model successfully saved to models/ModelRandomForestClassifier.pkl.
+Accuracy: 0.8731707317073171
+ROC-AUC: 0.9603083952027412
+Brier Score: 0.09037079148672914
+Confusion Matrix:
+[[82 20]
+ [ 6 97]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.80      0.86       102
+           1       0.83      0.94      0.88       103
+
+    accuracy                           0.87       205
+   macro avg       0.88      0.87      0.87       205
+weighted avg       0.88      0.87      0.87       205
+
+Best Parameter Combination: {'max_depth': 5, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 65}
+Best Accuracy Score: 0.9255902248602977
