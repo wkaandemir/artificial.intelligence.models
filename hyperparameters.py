@@ -1,7 +1,7 @@
 import numpy as np
 
 # Write the name of the target column where it says target.
-target_column = "Cyberchondria"
+target_column = "target"
 file_path = 'data.xlsx'
 
 
