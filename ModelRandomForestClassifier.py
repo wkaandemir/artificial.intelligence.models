@@ -9,8 +9,8 @@ import hyperparameters
 from hyperparameters import RandomForest_hyperparameters
 def run():
     # Load the data
-    file_path = 'data.csv'
-    data = pd.read_csv(file_path)
+    file_path = 'data.xlsx'
+    data = pd.read_excel(file_path)
 
     def save_results(result):
         # Output folder path

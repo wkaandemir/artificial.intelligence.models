@@ -1,7 +1,9 @@
 import numpy as np
 
 # Write the name of the target column where it says target.
-target_column = "target"
+target_column = "Cyberchondria"
+file_path = 'data.xlsx'
+
 
 # AdaBoost Classifier Hyperparameters for Energy Saving
 AdaBoost_hyperparameters = {

@@ -9,8 +9,7 @@ import hyperparameters
 from hyperparameters import XGBoost_hyperparameters
 def run():
     # Load the data
-    file_path = 'data.csv'
-    data = pd.read_csv(file_path)
+    data = pd.read_excel(hyperparameters.file_path)
 
     def save_results(result):
         # Output folder path
