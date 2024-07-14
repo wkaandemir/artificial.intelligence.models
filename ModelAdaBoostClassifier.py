@@ -5,12 +5,14 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.impute import SimpleImputer
 import pickle
 import os
-import hyperparameters
-
 from hyperparameters import AdaBoost_hyperparameters
+
 def run():
     # Load the data
-    data = pd.read_excel(hyperparameters.file_path)
+    target_column = "target"
+    file_path = 'data.xlsx'
+    data = pd.read_excel(file_path)
+
 
     def save_results(result):
         # Output folder path
@@ -29,8 +31,8 @@ def run():
     print = save_results
 
     # Separate the target variable and features
-    X = data.drop(columns=[hyperparameters.target_column])
-    y = data[hyperparameters.target_column]
+    X = data.drop(columns=[target_column])
+    y = data[target_column]
 
     # Fill missing values with the mean
     imputer = SimpleImputer(strategy='mean')
@@ -39,12 +41,11 @@ def run():
     # Split the data into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-
     # Hyperparameter combinations
     param_grid = AdaBoost_hyperparameters
 
     # Create the AdaBoostClassifier model
-    ada_model = AdaBoostClassifier(random_state=42)
+    ada_model = AdaBoostClassifier(random_state=42, algorithm='SAMME')  # Updated line
 
     # Use the model and parameter combinations for Grid Search
     grid_search = GridSearchCV(estimator=ada_model, param_grid=param_grid, scoring='accuracy', cv=3, verbose=2)
@@ -94,3 +95,6 @@ def run():
     # Display the best parameter combination and score
     print(f"Best Parameter Combination: {grid_search.best_params_}")
     print(f"Best Accuracy Score: {grid_search.best_score_}")
+
+
+run()

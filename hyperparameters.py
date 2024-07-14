@@ -1,10 +1,5 @@
 import numpy as np
 
-# Write the name of the target column where it says target.
-target_column = "target"
-file_path = 'data.xlsx'
-
-
 # AdaBoost Classifier Hyperparameters for Energy Saving
 AdaBoost_hyperparameters = {
     'learning_rate': np.arange(0.01, 0.1, 0.01),

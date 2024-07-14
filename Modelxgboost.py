@@ -5,11 +5,13 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.impute import SimpleImputer
 import os
 import pickle
-import hyperparameters
 from hyperparameters import XGBoost_hyperparameters
 def run():
     # Load the data
-    data = pd.read_excel(hyperparameters.file_path)
+    target_column = "target"
+    file_path = 'data.xlsx'
+    data = pd.read_excel(file_path)
+
 
     def save_results(result):
         # Output folder path
@@ -28,8 +30,8 @@ def run():
     print = save_results
 
     # Separate the target variable and features
-    X = data.drop(columns=[hyperparameters.target_column])
-    y = data[hyperparameters.target_column]
+    X = data.drop(columns=[target_column])
+    y = data[target_column]
 
     # Fill missing values with the mean
     imputer = SimpleImputer(strategy='mean')
@@ -90,3 +92,4 @@ def run():
     print(f"Classification Report:\n{class_report}")
     print(f"Best parameter combination: {grid_search.best_params_}")
     print(f"Best accuracy score: {grid_search.best_score_}")
+run()
