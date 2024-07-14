@@ -1,0 +1,33 @@
+XGBoost Classifier Analysis:
+Accuracy: 1.0
+ROC-AUC: 1.0
+Brier Score: 0.0
+Confusion Matrix:
+[[499   0]
+ [  0 526]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       499
+           1       1.00      1.00      1.00       526
+
+    accuracy                           1.00      1025
+   macro avg       1.00      1.00      1.00      1025
+weighted avg       1.00      1.00      1.00      1025
+
+Best parameter combination: {'subsample': 1.0, 'n_estimators': 70, 'max_depth': 5, 'learning_rate': np.float64(0.09), 'colsample_bytree': 0.8}
+Best accuracy score: 0.9794978648968463
+Feature Importances:
+age: 0.05001221224665642
+sex: 0.06516025960445404
+cp: 0.231259286403656
+trestbps: 0.03738619387149811
+chol: 0.03945012390613556
+fbs: 0.03392557054758072
+restecg: 0.04117324948310852
+thalach: 0.04329417645931244
+exang: 0.07236544787883759
+oldpeak: 0.06448375433683395
+slope: 0.058180950582027435
+ca: 0.11114153265953064
+thal: 0.15216726064682007

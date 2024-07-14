@@ -5,17 +5,15 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.impute import SimpleImputer
 import pickle
 import os
-from hyperparameters import GradientBoosting_hyperparameters
+from hyperparameters import GradientBoosting_hyperparameters,target_column,file_path
 def run():
     # Load the data
-    target_column = "target"
-    file_path = 'data.xlsx'
     data = pd.read_excel(file_path)
 
 
     def save_results(result):
         # Output folder path
-        output_folder = "output"
+        output_folder = "ModelGradientBoostingClassifier"
 
         # Create the output folder if it doesn't exist
         if not os.path.exists(output_folder):
@@ -55,7 +53,7 @@ def run():
     best_gb_model = grid_search.best_estimator_
 
     # Path to the models folder
-    models_folder = "models"
+    models_folder = "ModelGradientBoostingClassifier"
 
     # Create the models folder if it doesn't exist
     if not os.path.exists(models_folder):

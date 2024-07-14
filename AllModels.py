@@ -2,13 +2,15 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.model_selection import RandomizedSearchCV, train_test_split, learning_curve
+from sklearn.model_selection import RandomizedSearchCV, learning_curve
 from sklearn.ensemble import AdaBoostClassifier, GradientBoostingClassifier, RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from xgboost import XGBClassifier
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, roc_auc_score, brier_score_loss, confusion_matrix, classification_report
+import joblib
 
 from hyperparameters import (
     AdaBoost_hyperparameters,
@@ -18,14 +20,9 @@ from hyperparameters import (
     LogisticRegression_hyperparameters,
     SupportVectorMachines_hyperparameters,
     XGBoost_hyperparameters,
-    DecisionTree_hyperparameters
+    DecisionTree_hyperparameters,
+    target_column, file_path
 )
-from sklearn.metrics import accuracy_score, roc_auc_score, brier_score_loss, confusion_matrix, classification_report
-import joblib
-
-# File path and target column name
-file_path = 'data.xlsx' # Place the data file next to this script and specify its name here
-target_column = "target" # Enter the target column name
 
 # Load the data
 data = pd.read_excel(file_path)
@@ -67,6 +64,13 @@ class ModelAnalysis:
         cm = confusion_matrix(y, y_pred)
         cr = classification_report(y, y_pred)
 
+        # Calculate feature importances if applicable
+        feature_importances = None
+        if hasattr(self.model, 'feature_importances_'):
+            feature_importances = self.model.feature_importances_
+        elif hasattr(self.model, 'coef_'):
+            feature_importances = np.abs(self.model.coef_[0])
+        
         output_filename = f"AllModelsTXT/{self.model_name.replace(' ', '')}.txt"
         os.makedirs(os.path.dirname(output_filename), exist_ok=True)
         with open(output_filename, 'w') as f:
@@ -78,6 +82,11 @@ class ModelAnalysis:
             f.write(f"Classification Report:\n{cr}\n")
             f.write(f"Best parameter combination: {self.best_params}\n")
             f.write(f"Best accuracy score: {self.best_score}\n")
+            
+            if feature_importances is not None:
+                f.write("Feature Importances:\n")
+                for feature, importance in zip(X.columns, feature_importances):
+                    f.write(f"{feature}: {importance}\n")
         print(f"Results saved to {output_filename}")
 
     def plot_learning_curve(self):

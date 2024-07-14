@@ -35,7 +35,18 @@ To run the project locally, follow these steps:
    - Depending on your requirements, adjust parameters in either `wide_hyperparameters.txt` or `narrow_hyperparameters.txt` with those in `hyperparameters.py`.
 
 3. **Run the Project:**
-   - Execute the `run.py` file to automate necessary processes.
+   - Create Virtual Environment
+     ```bash
+     python -m venv venv
+     ```
+   - Install requirements
+     ```bash
+     pip install -r requirements.txt
+     ```
+   - run models
+     ```bash
+     python AllModels.py
+     ```
 
 ## Contributors
 

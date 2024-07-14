@@ -1,0 +1,19 @@
+Model successfully saved to ModelSupportVectorMachines\ModelSupportVectorMachines.pkl.
+Accuracy: 0.8
+ROC-AUC: 0.8617932609937178
+Brier Score: 0.15439847730118142
+Confusion Matrix:
+[[70 32]
+ [ 9 94]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.69      0.77       102
+           1       0.75      0.91      0.82       103
+
+    accuracy                           0.80       205
+   macro avg       0.82      0.80      0.80       205
+weighted avg       0.82      0.80      0.80       205
+
+Best Parameter Combination: {'C': np.float64(0.05099999999999999), 'degree': 2, 'gamma': 'scale', 'kernel': 'linear'}
+Best Accuracy Score: 0.8524727502829693

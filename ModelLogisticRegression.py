@@ -5,16 +5,14 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.impute import SimpleImputer
 import pickle
 import os
-from hyperparameters import LogisticRegression_hyperparameters
+from hyperparameters import LogisticRegression_hyperparameters,target_column,file_path
 def run():
     # Load the data
-    target_column = "target"
-    file_path = 'data.xlsx'
     data = pd.read_excel(file_path)
 
     def save_results(result):
         # Output folder path
-        output_folder = "output"
+        output_folder = "ModelLogisticRegression"
 
         # Create the output folder if it doesn't exist
         if not os.path.exists(output_folder):
@@ -53,7 +51,7 @@ def run():
     best_lr_model = grid_search.best_estimator_
 
     # Path to the models folder
-    models_folder = "models"
+    models_folder = "ModelLogisticRegression"
 
     # Create the models folder if it doesn't exist
     if not os.path.exists(models_folder):

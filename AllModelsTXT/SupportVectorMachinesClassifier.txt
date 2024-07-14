@@ -1,0 +1,33 @@
+Support Vector Machines Classifier Analysis:
+Accuracy: 0.8458536585365853
+ROC-AUC: 0.8436378460342738
+Brier Score: 0.15414634146341463
+Confusion Matrix:
+[[379 120]
+ [ 38 488]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.91      0.76      0.83       499
+           1       0.80      0.93      0.86       526
+
+    accuracy                           0.85      1025
+   macro avg       0.86      0.84      0.84      1025
+weighted avg       0.85      0.85      0.84      1025
+
+Best parameter combination: {'kernel': 'linear', 'gamma': 'scale', 'degree': 3, 'C': np.float64(0.09099999999999998)}
+Best accuracy score: 0.8467956303270395
+Feature Importances:
+age: 0.009533609253086883
+sex: 0.9668601448083276
+cp: 0.6276085589605167
+trestbps: 0.013907033709458005
+chol: 0.002654169803332884
+fbs: 0.010985295576072127
+restecg: 0.23344163673427082
+thalach: 0.016029372623407312
+exang: 0.5778772743967249
+oldpeak: 0.46612295907062495
+slope: 0.3081631030711539
+ca: 0.4853561306135195
+thal: 0.7467970622777018

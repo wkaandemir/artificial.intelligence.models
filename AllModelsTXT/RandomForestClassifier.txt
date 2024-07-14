@@ -1,0 +1,33 @@
+Random Forest Classifier Analysis:
+Accuracy: 0.9365853658536586
+ROC-AUC: 0.9356412444661185
+Brier Score: 0.06341463414634146
+Confusion Matrix:
+[[449  50]
+ [ 15 511]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.90      0.93       499
+           1       0.91      0.97      0.94       526
+
+    accuracy                           0.94      1025
+   macro avg       0.94      0.94      0.94      1025
+weighted avg       0.94      0.94      0.94      1025
+
+Best parameter combination: {'n_estimators': 85, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 5}
+Best accuracy score: 0.9248512287561524
+Feature Importances:
+age: 0.05358453678407178
+sex: 0.028705018878616824
+cp: 0.1804831655192062
+trestbps: 0.03623636562492073
+chol: 0.03668583478325266
+fbs: 0.0041371808981023874
+restecg: 0.01335258395150118
+thalach: 0.09059186828573328
+exang: 0.06948676884121523
+oldpeak: 0.11660571461821681
+slope: 0.0546081943809952
+ca: 0.16033990887781685
+thal: 0.1551828585563508

@@ -1,0 +1,19 @@
+K-Nearest Neighbors Classifier Analysis:
+Accuracy: 1.0
+ROC-AUC: 1.0
+Brier Score: 0.0
+Confusion Matrix:
+[[499   0]
+ [  0 526]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       499
+           1       1.00      1.00      1.00       526
+
+    accuracy                           1.00      1025
+   macro avg       1.00      1.00      1.00      1025
+weighted avg       1.00      1.00      1.00      1025
+
+Best parameter combination: {'weights': 'distance', 'p': 2, 'n_neighbors': 3}
+Best accuracy score: 0.9658583571996134

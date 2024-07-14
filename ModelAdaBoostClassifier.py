@@ -5,24 +5,21 @@ from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.impute import SimpleImputer
 import pickle
 import os
-from hyperparameters import AdaBoost_hyperparameters
+from hyperparameters import AdaBoost_hyperparameters, target_column, file_path
 
 def run():
     # Load the data
-    target_column = "target"
-    file_path = 'data.xlsx'
     data = pd.read_excel(file_path)
-
-
+    
     def save_results(result):
         # Output folder path
-        output_folder = "output"
+        output_folder = "ModelAdaBoostClassifier"
 
         # Create the output folder if it doesn't exist
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
 
-        # Save the result to 'ModelDecisionTreeClassifier.txt' in the output folder
+        # Save the result to 'ModelAdaBoostClassifier.txt' in the output folder
         output_path = os.path.join(output_folder, 'ModelAdaBoostClassifier.txt')
         with open(output_path, 'a') as f:
             f.write(result + '\n')
@@ -55,7 +52,7 @@ def run():
     best_ada_model = grid_search.best_estimator_
 
     # Path to the models folder
-    models_folder = "models"
+    models_folder = "ModelAdaBoostClassifier"
 
     # Create the models folder if it doesn't exist
     if not os.path.exists(models_folder):
@@ -95,6 +92,5 @@ def run():
     # Display the best parameter combination and score
     print(f"Best Parameter Combination: {grid_search.best_params_}")
     print(f"Best Accuracy Score: {grid_search.best_score_}")
-
 
 run()

@@ -1,0 +1,33 @@
+Decision Tree Classifier Analysis:
+Accuracy: 0.935609756097561
+ROC-AUC: 0.9347935414555346
+Brier Score: 0.06439024390243903
+Confusion Matrix:
+[[451  48]
+ [ 18 508]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.90      0.93       499
+           1       0.91      0.97      0.94       526
+
+    accuracy                           0.94      1025
+   macro avg       0.94      0.93      0.94      1025
+weighted avg       0.94      0.94      0.94      1025
+
+Best parameter combination: {'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 5, 'criterion': 'gini'}
+Best accuracy score: 0.9033944424436785
+Feature Importances:
+age: 0.09100506097017705
+sex: 0.0471593904032453
+cp: 0.3396441078835227
+trestbps: 0.021377089465694908
+chol: 0.07951105619355398
+fbs: 0.0
+restecg: 0.023556586389955947
+thalach: 0.038314141568658255
+exang: 0.02792702407897763
+oldpeak: 0.09209200070649826
+slope: 0.0
+ca: 0.15184098917254768
+thal: 0.08757255316716818

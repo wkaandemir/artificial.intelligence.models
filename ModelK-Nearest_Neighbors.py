@@ -5,24 +5,22 @@ from sklearn.metrics import accuracy_score, classification_report,  confusion_ma
 from sklearn.impute import SimpleImputer
 import pickle
 import os
-from hyperparameters import K_Nearest_Neighbors_hyperparameters
+from hyperparameters import K_Nearest_Neighbors_hyperparameters,target_column,file_path
 def run():
     # Load the data
-    target_column = "target"
-    file_path = 'data.xlsx'
     data = pd.read_excel(file_path)
 
 
     def save_results(result):
         # Output folder path
-        output_folder = "output"
+        output_folder = "ModelK_Nearest_Neighbors"
 
         # Create the output folder if it doesn't exist
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
 
         # Save the result to 'ModelDecisionTreeClassifier.txt' in the output folder
-        output_path = os.path.join(output_folder, 'ModelK-Nearest_Neighbors.txt')
+        output_path = os.path.join(output_folder, 'ModelK_Nearest_Neighbors.txt')
         with open(output_path, 'a') as f:
             f.write(result + '\n')
 
@@ -55,7 +53,7 @@ def run():
 
 
     # Path to the models folder
-    models_folder = "models"
+    models_folder = "ModelK_Nearest_Neighbors"
 
     # Create the models folder if it doesn't exist
     if not os.path.exists(models_folder):
